@@ -201,7 +201,7 @@ main {
 }
 
 
-@media only screen and (max-width: 349px) {
+@media only screen and (max-width: 500px) {
     .form{
         display: flex;
         flex-direction: column;
