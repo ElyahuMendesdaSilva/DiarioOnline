@@ -88,7 +88,7 @@ function Home() {
                 behavior: 'smooth' // Adiciona uma animação suave à rolagem
               });
             document.querySelector(".bkg").style.display = "flex"
-            document.querySelector("body").style.overflow = 'hidden';
+            //document.querySelector("body").style.overflow = 'hidden';
             document.querySelector(".user-select-img").src = Data.img;
             document.querySelector(".Comentario").innerHTML = ""
             document.querySelector(".Comentario").innerHTML = Data.Comentario
