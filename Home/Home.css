@@ -199,3 +199,37 @@ main {
     fill: #ffa723;
     /* Set color for selected stars */
 }
+
+
+@media only screen and (max-width: 349px) {
+    .form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pt-1,.pt-2,.center,.top{
+        width: 100%;
+    }
+
+    .top{
+        width: 100%;
+        min-width: 100%;
+        justify-content: left;
+        display: flex;
+        align-items: center;
+        
+    }
+    .top button{
+        margin: 0;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .center{
+        width: 100%;
+        max-width: none;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+}
