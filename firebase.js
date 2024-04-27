@@ -4,7 +4,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstati
 import { get, getDatabase, ref as dbRef, set as dbSet } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCX3r37GAHv8pGKSQfGp_dLUsLl21wMHqA",
+    apiKey: ChaveDeAcesso(),
     authDomain: "amaral9c.firebaseapp.com",
     projectId: "amaral9c",
     databaseURL: "https://amaral9c-default-rtdb.firebaseio.com/",
@@ -22,6 +22,19 @@ const database = getDatabase(app);
 
 let ButtonLogin = document.querySelector(".signin");
 let ButtonCreateUser = document.querySelector(".button")
+
+
+function ChaveDeAcesso(){
+    let data = localStorage.getItem("Chave")
+    if(!data){
+        let chave_De_Acesso = prompt("Qual a Chave de Acesso?")
+        localStorage.setItem("Chave",chave_De_Acesso);
+        return data
+    }else{
+        return data
+    } 
+    window.location.href = "index.html"
+}
 
 if (ButtonLogin) {
     ButtonLogin.addEventListener("click", ev => {
