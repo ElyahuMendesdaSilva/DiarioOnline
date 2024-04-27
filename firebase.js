@@ -23,7 +23,6 @@ const database = getDatabase(app);
 let ButtonLogin = document.querySelector(".signin");
 let ButtonCreateUser = document.querySelector(".button")
 
-
 function ChaveDeAcesso(){
     let data = localStorage.getItem("Chave")
     if(!data){
@@ -31,6 +30,7 @@ function ChaveDeAcesso(){
         localStorage.setItem("Chave",chave_De_Acesso);
         return data
     }else{
+        Timer(data)        
         return data
     } 
     window.location.href = "index.html"
@@ -151,5 +151,29 @@ if (window.location.href.includes("Home/Home.html")) {
                     .catch(error => {
                         alert("Erro")
                     });
+    }
+}
+
+function Timer(chave){
+    let verificarL = chave
+    setInterval(function() {
+        verificarL =  verificarLocalStorage(verificarL);
+    }, 10000);
+}
+
+function verificarLocalStorage(anterior) {
+    let data = localStorage.getItem('Chave');
+    if (data == "") {
+        localStorage.clear()
+        alert("Alerta!Modificação Não Autorizada")
+        window.location.href = ""
+    }else{
+        if(data != anterior){
+            localStorage.clear()
+            alert("Alerta!Modificação Não Autorizada")
+            window.location.href = ""
+        }else{
+            return  data
+        }
     }
 }
